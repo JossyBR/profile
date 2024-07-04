@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <Header />
       <About />
-      <Interests  />
+      <Interests />
       <ContactForm />
     </div>
   );

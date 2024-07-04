@@ -1,12 +1,15 @@
-const Interest = () => {
-  <section>
-    <h2>Intereses</h2>
-    <ul>
-      <li>Interes 1</li>
-      <li>Interes 2</li>
-      <li>Interes 3</li>
-    </ul>
-  </section>;
+import styles from "./Interests.module.css";
+const Interests = () => {
+  return (
+    <section className={styles.interests}>
+      <h2>Intereses</h2>
+      <ul>
+        <li>Interes 1</li>
+        <li>Interes 2</li>
+        <li>Interes 3</li>
+      </ul>
+    </section>
+  );
 };
 
-export default Interest;
+export default Interests;

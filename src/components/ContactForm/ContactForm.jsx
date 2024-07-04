@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import styles from "./Contact.module.css";
 
 const ContactForm = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -43,7 +44,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section>
+    <section className={styles.contact}>
       <h2>Contacto</h2>
       <form onClick={handleSubmit}>
         <div>
@@ -56,7 +57,7 @@ const ContactForm = () => {
             onChange={handleChange}
             required
           />
-          {errors.name && <p>{errors.name}</p>}
+          {errors.name && <p className={styles.errorText}>{errors.name}</p>}
         </div>
 
         <div>
@@ -69,7 +70,7 @@ const ContactForm = () => {
             onChange={handleChange}
             required
           />
-          {errors.email && <p>{errors.email}</p>}
+          {errors.email && <p className={styles.errorText}>{errors.email}</p>}
         </div>
 
         <div>
@@ -81,11 +82,16 @@ const ContactForm = () => {
             onChange={handleChange}
             required
           />
-          {errors.message && <p>{errors.message}</p>}
+          {errors.message && (
+            <p className={styles.errorText}>{errors.message}</p>
+          )}
         </div>
 
         <button type="submit">Enviar</button>
       </form>
+      <footer >
+        <p>&#169; 2024 Jossy Benitez</p>
+      </footer>
     </section>
   );
 };
