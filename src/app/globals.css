@@ -1,13 +1,37 @@
 :root {
   background-color: #262a2c;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   color: #ffffff;
-  /* display: flex;
-    justify-content: center;
-    align-content: center; */
 }
 
 body {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   margin: 0;
+  padding-top: 50px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
 }

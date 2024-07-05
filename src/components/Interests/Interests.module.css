@@ -1,7 +1,41 @@
 .interests {
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
+  padding: 50px 0;
+  min-height: 100vh;
+}
+
+.interestsContainer {
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  text-align: justify;
+  border-radius: 20px;
+  background-color: #1c1e22;
+  border-radius: 20px;
+}
+
+.interestsContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.interestsContainer ol {
+  margin-left: 20px;
+}
+
+.interestsContainer li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .interestsContainer {
+    width: 90%;
+    padding: 10px;
+  }
 }

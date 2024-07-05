@@ -4,11 +4,11 @@ import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header id="inicio" className={styles.header}>
       {/* <img src={profile} alt="Perfil de usuario" /> */}
       <Image className={styles.image} src={profile} alt="Foto perfil" />
 
-      <h1>Nombre de usuario</h1>
+      <h1>Carlos Mendoza</h1>
     </header>
   );
 };
