@@ -4,10 +4,11 @@ import { useInView } from "react-intersection-observer";
 import styles from "./About.module.css";
 import "animate.css";
 
+//Para la visiblidad de los elementos en el navegador
 const About = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.1, //Considera visible al menos el 10% del elemento esta visible dentro del navegador
   });
 
   return (

@@ -5,9 +5,10 @@ import styles from "./Interests.module.css";
 import "animate.css";
 
 const Interests = () => {
+  //Para la visiblidad de los elementos en el navegador
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.1, //Considera visible al menos el 10% del elemento esta visible dentro del navegador
   });
 
   return (

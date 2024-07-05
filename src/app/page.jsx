@@ -9,18 +9,20 @@ import Footer from "@/components/Footer/Footer";
 import NavBar from "@/components/Nav/NavBar";
 
 const Home = () => {
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState(""); //Almaceno la seccion activa
 
+  //Manejar el scroll y determinar la seccion activa
   const handleScroll = () => {
-    const sections = document.querySelectorAll("section");
-    const scrollPos = window.scrollY + window.innerHeight / 2;
+    const sections = document.querySelectorAll("section"); //Se obtienen todas las secciones de la pagina
+    const scrollPos = window.scrollY + window.innerHeight / 2; //Se calcula la posicion de scroll mas el tamaño de la ventana visible
 
     sections.forEach((section) => {
       if (
+        //Se verifica si el scrol esta dentro de los limites de la seccion actual
         scrollPos >= section.offsetTop &&
         scrollPos < section.offsetTop + section.offsetHeight
       ) {
-        setActiveSection(section.id);
+        setActiveSection(section.id); //Se establece sesion activa basada en el ID
       }
     });
   };
@@ -32,6 +34,7 @@ const Home = () => {
     };
   }, []);
 
+  //Defino las secciones de la pagina con sus respectivos componentes
   const sections = [
     { id: "header", component: <Header /> },
     { id: "about", component: <About /> },

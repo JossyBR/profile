@@ -6,7 +6,6 @@ import "animate.css";
 const Header = () => {
   return (
     <header id="inicio" className={`${styles.header} `}>
-      {/* <img src={profile} alt="Perfil de usuario" /> */}
       <Image
         className={`${styles.image} animate__animated animate__backInDown`}
         src={profile}

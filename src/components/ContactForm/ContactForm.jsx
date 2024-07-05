@@ -10,9 +10,10 @@ const ContactForm = () => {
   const [errors, setErrors] = useState({});
   const [isAnimating, setIsAnimating] = useState(false);
 
+  //Para la visiblidad de los elementos en el navegador
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.1, //Considera visible al menos el 10% del elemento esta visible dentro del navegador
   });
 
   const handleChange = (e) => {
@@ -21,6 +22,7 @@ const ContactForm = () => {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
 
+  //Validación basica para el form
   const validateForm = () => {
     const newErrors = {};
     if (!form.name) newErrors.name = "Debes completar el nombre";
@@ -31,18 +33,18 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setSubmitted(true);
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
       alert("¡Mensaje enviado con éxito!");
       setForm({ name: "", email: "", message: "" });
-      //   setSubmitted(false);
+
       setErrors({});
     }
   };
 
+  //Para iniciar y detener la animacion en el form
   useEffect(() => {
     let animationInterval;
 
