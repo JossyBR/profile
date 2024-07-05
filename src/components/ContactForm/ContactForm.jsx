@@ -1,11 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Contact.module.css";
+import { useInView } from "react-intersection-observer";
+import "animate.css";
 
 const ContactForm = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState({});
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,11 +43,31 @@ const ContactForm = () => {
     }
   };
 
+  useEffect(() => {
+    let animationInterval;
+
+    if (inView) {
+      animationInterval = setInterval(() => {
+        setIsAnimating((prevIsAnimating) => !prevIsAnimating);
+      }, 3000);
+    } else {
+      clearInterval(animationInterval);
+      setIsAnimating(false);
+    }
+    return () => clearInterval(animationInterval);
+  }, [inView]);
+
   return (
     <>
       <section id="contact" className={styles.contact}>
         <h2>Contacto</h2>
-        <form className={styles.form} onClick={handleSubmit}>
+        <form
+          className={`${styles.form} ${
+            isAnimating ? "animate__animated animate__pulse" : ""
+          }`}
+          ref={ref}
+          onClick={handleSubmit}
+        >
           <h3>¡Contactame!</h3>
           <div>
             <label htmlFor="">Nombre</label>
@@ -86,8 +114,6 @@ const ContactForm = () => {
 
           <button type="submit">Enviar</button>
         </form>
-
-        
       </section>
     </>
   );
