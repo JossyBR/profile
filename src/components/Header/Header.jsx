@@ -12,7 +12,9 @@ const Header = () => {
         alt="Foto perfil"
       />
 
-      <h1 className="animate__animated animate__backInUp">Carlos Mendoza</h1>
+      <h1 className="animate__animated animate__backInUp">
+        Hola soy <span className={styles.name}> Carlos Mendoza </span>
+      </h1>
     </header>
   );
 };

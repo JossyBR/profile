@@ -114,7 +114,7 @@ const ContactForm = () => {
             )}
           </div>
 
-          <button type="submit">Enviar</button>
+          <button type="submit" >Enviar</button>
         </form>
       </section>
     </>
