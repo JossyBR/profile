@@ -1,7 +1,23 @@
+"use client";
+
+import { useInView } from "react-intersection-observer";
 import styles from "./Interests.module.css";
+import "animate.css";
+
 const Interests = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section id="interests" className={styles.interests}>
+    <section
+      id="interests"
+      className={`${styles.interests} ${
+        inView ? "animate__animated animate__lightSpeedInRight" : ""
+      }`}
+      ref={ref}
+    >
       <div className={styles.interestsContainer}>
         <h2>Intereses</h2>
         <ol>
